@@ -1,7 +1,5 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
-import { SessionProvider } from "next-auth/react";
-
 import "@/assets/styles/globals.css";
 
 export const metadata = {
@@ -9,15 +7,15 @@ export const metadata = {
   description: "Find your dream rental properties",
 };
 
-const MainLayout = ({ children }) => {
+const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body>
         <Navbar />
-        <SessionProvider> {children} </SessionProvider>
+        <main> {children} </main>
       </body>
     </html>
   );
 };
 
-export default MainLayout;
+export default RootLayout;
