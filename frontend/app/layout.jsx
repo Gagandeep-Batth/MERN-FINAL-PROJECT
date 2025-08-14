@@ -1,6 +1,8 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import "@/assets/styles/globals.css";
+import Footer from "@/components/Footer";
+import { AuthProvider } from "@/context/authContext";
 
 export const metadata = {
   title: "RentalHub | Find The Perfect Rental",
@@ -11,8 +13,11 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        <main> {children} </main>
+        <AuthProvider>
+          <Navbar />
+          <main> {children} </main>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );
